@@ -1,18 +1,13 @@
 <div align="center">
   
 # AI Code Task
-**An integrated development environment for Home Assistant, powered by AI.**
+**A lightweight and fast integrated development environment (IDE) for Home Assistant, powered by artificial intelligence.**
 
 <img width="80%" alt="AI Code Task imagine" src="https://github.com/user-attachments/assets/a4a20524-5b4d-4e11-8ebd-455995f490ea" />
 </div>
 
 Stop copy-pasting code between ChatGPT and your specialized editors. AI Code Task brings your AI assistant directly into your dashboard, with full access to your configuration files and entity states.
 
----
-
-[📖 **Read the Wiki Documentation**](https://github.com/Pajeronda/ai_code_task/wiki) | [🐞 **Report a Bug**](https://github.com/Pajeronda/ai_code_task/issues)
-
----
 
 ## What is this?
 
@@ -82,3 +77,9 @@ Click this badge after restart Home Assistant to configure **xAI Conversation**
 ## Usage Tips
 
 *   **Panel Mode**: This card works best in "Panel" (single card) view, giving you the full width for the dual-pane layout (Chat on left, Code/Explorer on right).
+
+---
+
+[📖 **Read the Wiki Documentation**](https://github.com/Pajeronda/ai_code_task/wiki) | [🐞 **Report a Bug**](https://github.com/Pajeronda/ai_code_task/issues)
+
+---
