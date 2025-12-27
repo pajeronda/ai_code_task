@@ -10,6 +10,10 @@ Stop copy-pasting code between ChatGPT and your specialized editors. AI Code Tas
 
 ---
 
+[📖 **Read the Wiki Documentation**](https://github.com/Pajeronda/ai_code_task/wiki) | [🐞 **Report a Bug**](https://github.com/Pajeronda/ai_code_task/issues)
+
+---
+
 ## What is this?
 
 This is a custom Lovelace card that combines three tools into one cohesive interface:
@@ -40,7 +44,7 @@ The chat and editor are linked.
 *   **Snippet vs File:** The interface distinguishes between a generic code example (Snippet) and a modification to an actual file, reducing confusion.
 
 ### 4. AI Agnostic
-This card doesn't care which AI you use. It sits on top of Home Assistant's conversation agent platform.
+This card doesn't care which AI you use. It sits on top of Home Assistant's AI TASK platform.
 *   **Works with Everything:** OpenAI, Google Gemini, Anthropic, or local LLMs (via Ollama/LocalAI). If it's configured in Home Assistant, it works here.
 *   **Switch on the Fly:** You can switch providers instantly from the dropdown menu to compare responses.
 
