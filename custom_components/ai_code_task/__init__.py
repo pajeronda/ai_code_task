@@ -10,7 +10,12 @@ from .const import DOMAIN
 from .websockets import async_setup_websockets
 from .helpers import JSModuleRegistration
 
+import voluptuous as vol
+from homeassistant.helpers import config_validation as cv
+
 PLATFORMS: list[Platform] = []
+
+CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
 
 
 async def async_setup(hass: HomeAssistant, config: dict) -> bool:
