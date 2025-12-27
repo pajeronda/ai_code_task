@@ -1,0 +1,45 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "仅允许运行一个 AI Code Task 实例。"
+        },
+        "step": {
+            "user": {
+                "title": "AI Code Task 设置",
+                "description": "配置您的 AI 编程助手。",
+                "data": {
+                    "default_provider": "AI 服务商",
+                    "assistant_name": "助手名称"
+                },
+                "data_description": {
+                    "default_provider": "选择为您提供服务的 AI 服务。",
+                    "assistant_name": "为您的助手命名。"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "AI Code Task 选项",
+                "description": "调整助手设置。",
+                "data": {
+                    "default_provider": "AI 服务商",
+                    "assistant_name": "助手名称",
+                    "chat_history_size": "对话记忆",
+                    "advanced_mode": "高级模式",
+                    "system_prompt": "系统提示词",
+                    "max_context_chars": "最大上下文大小（字符）"
+                },
+                "data_description": {
+                    "default_provider": "选择默认 AI 服务。",
+                    "assistant_name": "为您的助手命名。",
+                    "chat_history_size": "建议：10-20 条消息。",
+                    "advanced_mode": "启用以自定义完整的系统提示词。",
+                    "system_prompt": "定义 AI 行为的完整系统提示词。",
+                    "max_context_chars": "提示词中的最大字符数（历史 + 代码 + 文件）。~4 个字符 = 1 个 token（32000 个字符 \u2248 8k tokens）。重要提示：您必须在所选 AI Task 服务的设置中设置相同（或更高）的“最大 Token 数”(Max Tokens)。"
+                }
+            }
+        }
+    }
+}

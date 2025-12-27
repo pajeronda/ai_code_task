@@ -1,0 +1,45 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Only a single instance of AI Code Task is allowed."
+        },
+        "step": {
+            "user": {
+                "title": "AI Code Task Setup",
+                "description": "Configure your AI-powered coding assistant.",
+                "data": {
+                    "default_provider": "AI Provider",
+                    "assistant_name": "Assistant Name"
+                },
+                "data_description": {
+                    "default_provider": "Select which AI service will answer your requests (you can change this anytime from the card).",
+                    "assistant_name": "Give your assistant a name. It will use this to introduce itself."
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "AI Code Task Options",
+                "description": "Adjust your assistant settings.",
+                "data": {
+                    "default_provider": "AI Provider",
+                    "assistant_name": "Assistant Name",
+                    "chat_history_size": "Conversation Memory",
+                    "advanced_mode": "Advanced Mode",
+                    "system_prompt": "System Prompt",
+                    "max_context_chars": "Max Context Size (chars)"
+                },
+                "data_description": {
+                    "default_provider": "Select the default AI service.",
+                    "assistant_name": "Give your assistant a name. It will use this to introduce itself.",
+                    "chat_history_size": "How many previous messages the AI remembers. Higher = better context but costs more tokens. Recommended: 10-20.",
+                    "advanced_mode": "Enable to customize the entire system prompt (for power users).",
+                    "system_prompt": "The full system prompt that defines AI behavior.",
+                    "max_context_chars": "Max characters in the prompt (history + code + files). ~4 chars = 1 token (32000 chars \u2248 8k tokens). IMPORTANT: You must set the same (or higher) 'Max Tokens' in your chosen AI Task service settings."
+                }
+            }
+        }
+    }
+}

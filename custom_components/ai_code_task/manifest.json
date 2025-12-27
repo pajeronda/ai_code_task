@@ -1,0 +1,14 @@
+{
+  "domain": "ai_code_task",
+  "name": "AI Code Task",
+  "codeowners": ["@pajeronda"],
+  "config_flow": true,
+  "dependencies": [
+    "ai_task",
+    "frontend"
+  ],
+  "issue_tracker": "https://github.com/Pajeronda/ai_code_task/issues",
+  "iot_class": "local_push",
+  "requirements": [],
+  "version": "1.0.0"
+}

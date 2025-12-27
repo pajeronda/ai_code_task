@@ -1,0 +1,45 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Es ist nur eine Instanz von AI Code Task erlaubt."
+        },
+        "step": {
+            "user": {
+                "title": "AI Code Task Einrichtung",
+                "description": "Konfigurieren Sie Ihren KI-Programmierassistenten.",
+                "data": {
+                    "default_provider": "KI-Anbieter",
+                    "assistant_name": "Name des Assistenten"
+                },
+                "data_description": {
+                    "default_provider": "Wählen Sie den KI-Dienst aus.",
+                    "assistant_name": "Geben Sie Ihrem Assistenten einen Namen."
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "AI Code Task Optionen",
+                "description": "Passen Sie Ihre Assistenten-Einstellungen an.",
+                "data": {
+                    "default_provider": "KI-Anbieter",
+                    "assistant_name": "Name des Assistenten",
+                    "chat_history_size": "Verlaufsspeicher",
+                    "advanced_mode": "Erweiterter Modus",
+                    "system_prompt": "System-Prompt",
+                    "max_context_chars": "Max. Kontextgröße (Zeichen)"
+                },
+                "data_description": {
+                    "default_provider": "Wählen Sie den Standard-KI-Dienst.",
+                    "assistant_name": "Benennen Sie Ihren Assistenten.",
+                    "chat_history_size": "Verlaufsspeicher. Empfohlen: 10-20.",
+                    "advanced_mode": "Aktivieren, um den gesamten System-Prompt anzupassen.",
+                    "system_prompt": "Der vollständige System-Prompt für das KI-Verhalten.",
+                    "max_context_chars": "Max. Zeichen im Prompt (Verlauf + Code + Dateien). ~4 Zeichen = 1 Token (32000 Zeichen \u2248 8k Token). WICHTIG: Sie müssen in den Einstellungen Ihres gewählten AI Task-Dienstes die gleiche (oder eine höhere) Anzahl an 'Max Tokens' festlegen."
+                }
+            }
+        }
+    }
+}

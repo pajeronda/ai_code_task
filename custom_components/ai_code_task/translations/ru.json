@@ -1,0 +1,45 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Разрешен только один экземпляр AI Code Task."
+        },
+        "step": {
+            "user": {
+                "title": "Настройка AI Code Task",
+                "description": "Настройте вашего ИИ-помощника для кодинга.",
+                "data": {
+                    "default_provider": "Провайдер ИИ",
+                    "assistant_name": "Имя помощника"
+                },
+                "data_description": {
+                    "default_provider": "Выберите ИИ-сервис для ответов на ваши запросы.",
+                    "assistant_name": "Дайте имя вашему помощнику."
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Опции AI Code Task",
+                "description": "Измените настройки помощника.",
+                "data": {
+                    "default_provider": "Провайдер ИИ",
+                    "assistant_name": "Имя помощника",
+                    "chat_history_size": "Память беседы",
+                    "advanced_mode": "Расширенный режим",
+                    "system_prompt": "Системный промпт",
+                    "max_context_chars": "Максимальный размер контекста (символы)"
+                },
+                "data_description": {
+                    "default_provider": "Выберите ИИ-сервис.",
+                    "assistant_name": "Дайте имя вашему помощнику.",
+                    "chat_history_size": "Рекомендуется: 10-20 сообщений.",
+                    "advanced_mode": "Включите для настройки всего системного промпта.",
+                    "system_prompt": "Полный системный промпт, определяющий поведение ИИ.",
+                    "max_context_chars": "Максимальное количество символов в промпте (история + код + файлы). ~4 символа = 1 токен (32000 симв. \u2248 8k токенов). ВАЖНО: Вы должны установить такое же (или большее) значение 'Max Tokens' в настройках выбранного сервиса AI Task."
+                }
+            }
+        }
+    }
+}

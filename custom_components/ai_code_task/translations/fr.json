@@ -1,0 +1,45 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Une seule instance d'AI Code Task est autorisée."
+        },
+        "step": {
+            "user": {
+                "title": "Configuration AI Code Task",
+                "description": "Configurez votre assistant de codage IA.",
+                "data": {
+                    "default_provider": "Fournisseur IA",
+                    "assistant_name": "Nom de l'Assistant"
+                },
+                "data_description": {
+                    "default_provider": "Choisissez le service IA qui répondra à vos requêtes.",
+                    "assistant_name": "Donnez un nom à votre assistant."
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Options AI Code Task",
+                "description": "Ajustez les paramètres de votre assistant.",
+                "data": {
+                    "default_provider": "Fournisseur IA",
+                    "assistant_name": "Nom de l'Assistant",
+                    "chat_history_size": "Mémoire de Conversation",
+                    "advanced_mode": "Mode Avancé",
+                    "system_prompt": "Prompt Système",
+                    "max_context_chars": "Taille Maximale du Contexte (caractères)"
+                },
+                "data_description": {
+                    "default_provider": "Sélectionnez le service IA par défaut.",
+                    "assistant_name": "Nommez votre assistant.",
+                    "chat_history_size": "Mémoire recommandée : 10-20.",
+                    "advanced_mode": "Activer pour personnaliser l'intégralité du prompt système.",
+                    "system_prompt": "Le prompt système complet définissant le comportement de l'IA.",
+                    "max_context_chars": "Nombre maximal de caractères dans le prompt (historique + code + fichiers). ~4 caractères = 1 token (32000 car. \u2248 8k tokens). IMPORTANT : Vous devez définir le même nombre (ou un nombre supérieur) de 'Max Tokens' dans les paramètres du service AI Task choisi."
+                }
+            }
+        }
+    }
+}
