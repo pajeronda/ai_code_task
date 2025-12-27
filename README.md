@@ -1,6 +1,10 @@
+<div align="center">
+  
 # AI Code Task
-
 **An integrated development environment for Home Assistant, powered by AI.**
+
+<img width="80%" alt="AI Code Task imagine" src="https://github.com/user-attachments/assets/a4a20524-5b4d-4e11-8ebd-455995f490ea" />
+</div>
 
 Stop copy-pasting code between ChatGPT and your specialized editors. AI Code Task brings your AI assistant directly into your dashboard, with full access to your configuration files and entity states.
 
@@ -44,11 +48,33 @@ This card doesn't care which AI you use. It sits on top of Home Assistant's conv
 
 ## Installation
 
-1.  **HACS** (Recommended): Add this repository as a custom repository in HACS and install.
-2.  **Manual**: Copy the `ai_code_task` directory to your `www/community/` folder.
-3.  **Add to Dashboard**: Add the `AI Code Task Card` to any dashboard view.
+### Via HACS (Recommended)
+
+Click this badge to install **xAI Conversation** via **HACS**
+
+[![Install via your HACS instance.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Pajeronda&repository=ai_code_task&category=integration)
+
+Click this badge after restart Home Assistant to configure **xAI Conversation**
+
+[![Open your Home Assistant instance and start setting up the integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=ai_code_task)
+
+
+**Manual HACS**
+1. Open **HACS** in Home Assistant
+2. Go to **Integrations** → **Menu (⋮)** → **Custom repositories**
+3. Add: `https://github.com/pajeronda/ai_code_task`
+4. Category: **Integration**
+5. Search for "**AI Code Task**" and click **Download**
+6. Restart Home Assistant
+
+### Manual Installation
+1. Download the latest release of [AI Code Task](https://github.com/pajeronda/ai_code_task/releases)
+   (alternatively, download the zip from the "<> code" badge at the top of this page)
+2. Extract and copy the `ai_code_task` folder to `config/custom_components/`
+3. Restart Home Assistant
+
+---
 
 ## Usage Tips
 
 *   **Panel Mode**: This card works best in "Panel" (single card) view, giving you the full width for the dual-pane layout (Chat on left, Code/Explorer on right).
-*   **Permissions**: Ensure the user accessing the card has permissions to read/write to the `/config` directory.
