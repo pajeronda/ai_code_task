@@ -40,7 +40,7 @@ The chat and editor are linked.
 
 ### 4. AI Agnostic
 This card doesn't care which AI you use. It sits on top of Home Assistant's AI TASK platform.
-*   **Works with Everything:** OpenAI, Google Gemini, Anthropic, or local LLMs (via Ollama/LocalAI). If it's configured in Home Assistant, it works here.
+*   **Works with Everything:** Grok xAI, OpenAI, Google Gemini, Anthropic, or local LLMs (via Ollama/LocalAI). If it's configured in Home Assistant, it works here.
 *   **Switch on the Fly:** You can switch providers instantly from the dropdown menu to compare responses.
 
 ---
