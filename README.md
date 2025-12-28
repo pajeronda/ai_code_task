@@ -1,18 +1,13 @@
 <div align="center">
   
 # AI Code Task
-**An integrated development environment for Home Assistant, powered by AI.**
+**A lightweight and fast integrated development environment (IDE) for Home Assistant, powered by artificial intelligence.**
 
 <img width="80%" alt="AI Code Task imagine" src="https://github.com/user-attachments/assets/a4a20524-5b4d-4e11-8ebd-455995f490ea" />
 </div>
 
 Stop copy-pasting code between ChatGPT and your specialized editors. AI Code Task brings your AI assistant directly into your dashboard, with full access to your configuration files and entity states.
 
----
-
-[📖 **Read the Wiki Documentation**](https://github.com/Pajeronda/ai_code_task/wiki) | [🐞 **Report a Bug**](https://github.com/Pajeronda/ai_code_task/issues)
-
----
 
 ## What is this?
 
@@ -45,7 +40,7 @@ The chat and editor are linked.
 
 ### 4. AI Agnostic
 This card doesn't care which AI you use. It sits on top of Home Assistant's AI TASK platform.
-*   **Works with Everything:** OpenAI, Google Gemini, Anthropic, or local LLMs (via Ollama/LocalAI). If it's configured in Home Assistant, it works here.
+*   **Works with Everything:** Grok xAI, OpenAI, Google Gemini, Anthropic, or local LLMs (via Ollama/LocalAI). If it's configured in Home Assistant, it works here.
 *   **Switch on the Fly:** You can switch providers instantly from the dropdown menu to compare responses.
 
 ---
@@ -82,3 +77,9 @@ Click this badge after restart Home Assistant to configure **xAI Conversation**
 ## Usage Tips
 
 *   **Panel Mode**: This card works best in "Panel" (single card) view, giving you the full width for the dual-pane layout (Chat on left, Code/Explorer on right).
+
+---
+
+[📖 **Read the Wiki Documentation**](https://github.com/Pajeronda/ai_code_task/wiki) | [🐞 **Report a Bug**](https://github.com/Pajeronda/ai_code_task/issues)
+
+---
