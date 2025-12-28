@@ -15,7 +15,11 @@ from __future__ import annotations
 import time
 from typing import Any
 
-from ..const import LOGGER, RECOMMENDED_CHAT_HISTORY_MAX_MESSAGES, DEFAULT_CHAT_HISTORY_SIZE
+from ..const import (
+    LOGGER,
+    RECOMMENDED_CHAT_HISTORY_MAX_MESSAGES,
+    DEFAULT_CHAT_HISTORY_SIZE,
+)
 
 
 class ChatHistoryService:
