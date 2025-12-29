@@ -91,17 +91,19 @@ I recommend using it in a dashboard in "Panel" mode (full screen) to optimize th
         theme: <your theme>
 ```
 
-### Add card
+### Add card:
 <div align="center">
 <img width="80%" alt="add card frontend" src="https://github.com/user-attachments/assets/b038c5e7-67a6-42af-b82e-d40f936d0b7c" />
 </div>
 
-## IMPORTANT:
+**IMPORTANT**:
 * If you don't see the card after the install/update, try refreshing your browser cache! On PC, press Ctrl + F5 (or Cmd + Shift + R on Mac). If you're using the Home Assistant app, try closing and reopening it.
 
 
 ---
+<div align="center">
+  
+[![📖 Wiki](https://github.com/Pajeronda/ai_code_task/wiki)] | [![🐞 Issues](https://github.com/Pajeronda/ai_code_task/issues)]
+  
+</div>
 
-[📖 **Read the Wiki Documentation**](https://github.com/Pajeronda/ai_code_task/wiki) | [🐞 **Report a Bug**](https://github.com/Pajeronda/ai_code_task/issues)
-
----
