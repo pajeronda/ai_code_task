@@ -143,8 +143,17 @@ async def ws_generate(
 
     provider_id = provider_id_override or config.get(CONF_DEFAULT_PROVIDER)
     if not provider_id:
-        connection.send_error(msg["id"], "no_provider", "No provider selected")
-        return
+        # Fallback to the first available provider and log a warning
+        available_providers = provider_manager.get_all_providers()
+        if available_providers:
+            provider_id = next(iter(available_providers))
+            LOGGER.info(
+                "No provider specified and no default set. Falling back to %s",
+                provider_id,
+            )
+        else:
+            connection.send_error(msg["id"], "no_provider", "No AI Task provider available")
+            return
 
     system_prompt = prompt_builder.build_system_prompt()
     history_size = int(config.get(CONF_CHAT_HISTORY_SIZE, DEFAULT_CHAT_HISTORY_SIZE))

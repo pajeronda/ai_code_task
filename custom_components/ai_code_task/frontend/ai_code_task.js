@@ -9,6 +9,16 @@
  * - Chat Interface with History
  * - File Uploads (Attachments supported via ai_task)
  */
+window.customCards = window.customCards || [];
+if (!window.customCards.some(card => card.type === 'ai-code-task-card')) {
+  window.customCards.push({
+    type: "ai-code-task-card",
+    name: "AI Code Task Card",
+    description: "AI-powered code assistant interface",
+    preview: true,
+  });
+}
+
 const run = async () => {
   // Wait for ha-panel-lovelace to be defined
   let lovelace = customElements.get("ha-panel-lovelace");
@@ -1444,7 +1454,9 @@ const run = async () => {
     }
   }
 
-  customElements.define('ai-code-task-card', AICodeTaskCard);
+  if (!customElements.get('ai-code-task-card')) {
+    customElements.define('ai-code-task-card', AICodeTaskCard);
+  }
 
   class AICodeTaskCardEditor extends LitElement {
     static get properties() {
@@ -1515,15 +1527,9 @@ const run = async () => {
       ></ha-form>`;
     }
   }
-  customElements.define('ai-code-task-card-editor', AICodeTaskCardEditor);
-
-  window.customCards = window.customCards || [];
-  window.customCards.push({
-    type: "ai-code-task-card",
-    name: "AI Code Task Card",
-    description: "AI-powered code assistant interface",
-    preview: true,
-  });
+  if (!customElements.get('ai-code-task-card-editor')) {
+    customElements.define('ai-code-task-card-editor', AICodeTaskCardEditor);
+  }
 
 
   console.info(

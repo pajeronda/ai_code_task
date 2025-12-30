@@ -75,12 +75,8 @@ class JSModuleRegistration:
         integration = await async_get_integration(self.hass, DOMAIN)
         version = integration.version
 
-        # Get resources already registered
-        resources = [
-            resource
-            for resource in self.lovelace.resources.async_items()
-            if resource["url"].startswith(JS_URL)
-        ]
+        # Get all registered resources to check for HACS or previous versions
+        all_resources = list(self.lovelace.resources.async_items())
 
         for module in JS_MODULES:
             filename = module.get("filename")
@@ -88,19 +84,22 @@ class JSModuleRegistration:
             versioned_url = f"{url}?v={version}"
 
             found_resource = None
-            for resource in resources:
-                if resource["url"].split("?")[0] == url:
+            # Check for any resource that ends with our filename
+            for resource in all_resources:
+                res_url = resource["url"].split("?")[0]
+                if res_url.endswith(f"/{filename}"):
                     found_resource = resource
                     break
 
             if found_resource:
-                # Check version
+                # Check version or URL mismatch (e.g. HACS path vs our path)
                 current_url = found_resource["url"]
                 if current_url != versioned_url:
                     LOGGER.debug(
-                        "Updating %s to version %s",
+                        "Updating resource %s (current: %s) to versioned URL %s",
                         module.get("name"),
-                        version,
+                        current_url,
+                        versioned_url,
                     )
                     await self.lovelace.resources.async_update_item(
                         found_resource.get("id"),

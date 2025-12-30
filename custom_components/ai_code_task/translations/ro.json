@@ -1,0 +1,45 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Este permisă o singură instanță de AI Code Task."
+        },
+        "step": {
+            "user": {
+                "title": "Configurare AI Code Task",
+                "description": "Configurați asistentul de programare bazat pe AI.",
+                "data": {
+                    "default_provider": "Furnizor AI",
+                    "assistant_name": "Nume Asistent"
+                },
+                "data_description": {
+                    "default_provider": "Selectați ce serviciu AI va răspunde solicitărilor dvs. (puteți schimba acest lucru oricând din card).",
+                    "assistant_name": "Dați un nume asistentului dvs. Îl va folosi pentru a se prezenta."
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Opțiuni AI Code Task",
+                "description": "Ajustați setările asistentului.",
+                "data": {
+                    "default_provider": "Furnizor AI",
+                    "assistant_name": "Nume Asistent",
+                    "chat_history_size": "Memoria Conversației",
+                    "advanced_mode": "Mod Avansat",
+                    "system_prompt": "Prompt de Sistem",
+                    "max_context_chars": "Dimensiune Maximă Context (caractere)"
+                },
+                "data_description": {
+                    "default_provider": "Selectați serviciul AI implicit.",
+                    "assistant_name": "Dați un nume asistentului dvs. Îl va folosi pentru a se prezenta.",
+                    "chat_history_size": "Câte mesaje anterioare își amintește AI-ul. Mai multe = context mai bun, dar costă mai multe token-uri. Recomandat: 10-20.",
+                    "advanced_mode": "Activați pentru a personaliza întregul prompt de sistem (pentru utilizatori avansați).",
+                    "system_prompt": "Promptul de sistem complet care definește comportamentul AI.",
+                    "max_context_chars": "Numărul maxim de caractere din prompt (istoric + cod + fișiere). ~4 caractere = 1 token (32000 caractere ≈ 8k token-uri). IMPORTANT: Trebuie să setați același (sau mai mare) 'Max Tokens' în setările serviciului AI Task ales."
+                }
+            }
+        }
+    }
+}
