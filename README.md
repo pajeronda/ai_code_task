@@ -49,14 +49,16 @@ This card doesn't care which AI you use. It sits on top of Home Assistant's AI T
 
 ### Via HACS (Recommended)
 
-Click this badge to install **xAI Conversation** via **HACS**
+Click this badge to install **AI CODE TASK** via **HACS**
 
 [![Install via your HACS instance.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Pajeronda&repository=ai_code_task&category=integration)
 
-Click this badge after restart Home Assistant to configure **xAI Conversation**
+Click this badge after restart Home Assistant to configure **AI CODE TASK** and select default **Provider AI**:
 
 [![Open your Home Assistant instance and start setting up the integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=ai_code_task)
-
+<div align="center">
+<img width="80%" alt="configure AI CODE TASK" src="https://github.com/user-attachments/assets/1684d769-1e00-4e93-a9e1-3bb1510d4baf" />
+</div>
 
 **Manual HACS**
 1. Open **HACS** in Home Assistant
@@ -73,13 +75,35 @@ Click this badge after restart Home Assistant to configure **xAI Conversation**
 3. Restart Home Assistant
 
 ---
+## CONFIGURATION FRONTEND:
+I recommend using it in a dashboard in "Panel" mode (full screen) to optimize the split view between chat and editor, but it works in all dashboard modes and on all device types.
 
-## Usage Tips
+<div align="center">
+<img width="80%" alt="configure panel mode" src="https://github.com/user-attachments/assets/d2881338-a9dd-49e6-a653-1c74bb24e293" />
+</div>
 
-*   **Panel Mode**: This card works best in "Panel" (single card) view, giving you the full width for the dual-pane layout (Chat on left, Code/Explorer on right).
+```yaml
+- type: panel
+    path: code
+    title: AI CODE TASK
+    cards:
+      - type: custom:ai-code-task-card
+        theme: <your theme>
+```
+
+### Add card:
+<div align="center">
+<img width="80%" alt="add card frontend" src="https://github.com/user-attachments/assets/b038c5e7-67a6-42af-b82e-d40f936d0b7c" />
+</div>
+
+**IMPORTANT**:
+* If you don't see the card after the install/update, try refreshing your browser cache! On PC, press Ctrl + F5 (or Cmd + Shift + R on Mac). If you're using the Home Assistant app, try closing and reopening it.
+
 
 ---
+<div align="center">
+  
+[![📖 Wiki](https://github.com/Pajeronda/ai_code_task/wiki)] | [![🐞 Issues](https://github.com/Pajeronda/ai_code_task/issues)]
+  
+</div>
 
-[📖 **Read the Wiki Documentation**](https://github.com/Pajeronda/ai_code_task/wiki) | [🐞 **Report a Bug**](https://github.com/Pajeronda/ai_code_task/issues)
-
----
