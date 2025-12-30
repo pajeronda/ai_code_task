@@ -103,7 +103,7 @@ I recommend using it in a dashboard in "Panel" mode (full screen) to optimize th
 ---
 <div align="center">
   
-[![📖 Wiki](https://github.com/Pajeronda/ai_code_task/wiki)] | [![🐞 Issues](https://github.com/Pajeronda/ai_code_task/issues)]
+[Wiki](https://github.com/Pajeronda/ai_code_task/wiki) | [Issues](https://github.com/Pajeronda/ai_code_task/issues)
   
 </div>
 
