@@ -3,6 +3,12 @@
 # AI Code Task
 **A lightweight and fast integrated development environment (IDE) for Home Assistant, powered by artificial intelligence.**
 
+  [![GitHub Release](https://img.shields.io/github/release/pajeronda/ai_code_task.svg?style=flat-square)](https://github.com/pajeronda/ai_code_task/releases)
+  [![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2025.10%2B-green)](https://www.home-assistant.io/blog/categories/core/)
+  [![hacs](https://img.shields.io/badge/HACS-Default-blue.svg?style=flat-square)](https://my.home-assistant.io/redirect/config_flow_start/?domain=ai_code_task)
+  [![License](https://img.shields.io/github/license/pajeronda/ai_code_task.svg?style=flat-square)](LICENSE)
+
+
 <img width="80%" alt="AI Code Task imagine" src="https://github.com/user-attachments/assets/a4a20524-5b4d-4e11-8ebd-455995f490ea" />
 </div>
 
