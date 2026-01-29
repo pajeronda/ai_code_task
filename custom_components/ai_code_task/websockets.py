@@ -23,6 +23,7 @@ from .const import (
     DEFAULT_CHAT_HISTORY_SIZE,
     DOMAIN,
     EVENT_CODE_RESPONSE,
+    LOGGER,
     RECOMMENDED_MAX_CONTEXT_CHARS,
 )
 from .helpers import (
@@ -152,7 +153,9 @@ async def ws_generate(
                 provider_id,
             )
         else:
-            connection.send_error(msg["id"], "no_provider", "No AI Task provider available")
+            connection.send_error(
+                msg["id"], "no_provider", "No AI Task provider available"
+            )
             return
 
     system_prompt = prompt_builder.build_system_prompt()

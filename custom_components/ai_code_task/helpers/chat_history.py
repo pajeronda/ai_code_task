@@ -1,19 +1,9 @@
-"""Chat History Service for AI Code Task.
-
-This service manages the persistent storage of complete chat messages (text and code)
-exclusively for the AI Code Task frontend experience.
-
-Features:
-- Asynchronous message saving.
-- Asynchronous history loading (for frontend sync).
-- Automatic cleanup.
-- Per-user message storage.
-"""
-
 from __future__ import annotations
-
+import os
 import time
 from typing import Any
+
+from homeassistant.helpers.storage import Store
 
 from ..const import (
     LOGGER,
@@ -37,17 +27,8 @@ class ChatHistoryService:
             storage_path: Storage file path
             entry: Config entry (optional)
         """
-        from homeassistant.helpers.storage import Store
-
         self.hass = hass
-
-        # Ensure directory exists if path implies one
-        if "/" in storage_path:
-            import os
-
-            full_path = hass.config.path(".storage", storage_path.rsplit("/", 1)[0])
-            os.makedirs(full_path, exist_ok=True)
-
+        self._storage_path = storage_path
         self._store = Store(hass, 1, storage_path)
         self._history: dict[str, dict] = {}
         self._loaded = False
@@ -56,6 +37,16 @@ class ChatHistoryService:
         """Ensure history is loaded from storage."""
         if self._loaded:
             return
+
+        # Ensure directory exists (async safe check)
+        if "/" in self._storage_path:
+            full_path = self.hass.config.path(
+                ".storage", self._storage_path.rsplit("/", 1)[0]
+            )
+            if not await self.hass.async_add_executor_job(os.path.exists, full_path):
+                await self.hass.async_add_executor_job(
+                    os.makedirs, full_path, 0o700, True
+                )
 
         try:
             data = await self._store.async_load()

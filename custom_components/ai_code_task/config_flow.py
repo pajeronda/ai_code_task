@@ -111,9 +111,10 @@ class AICodeTaskOptionsFlow(OptionsFlow):
 
         # Build schema
         schema_dict = {
-            vol.Optional(CONF_DEFAULT_PROVIDER): selector.EntitySelector(
-                selector.EntitySelectorConfig(domain="ai_task")
-            ),
+            vol.Optional(
+                CONF_DEFAULT_PROVIDER,
+                default=config.get(CONF_DEFAULT_PROVIDER),
+            ): selector.EntitySelector(selector.EntitySelectorConfig(domain="ai_task")),
             vol.Optional(
                 CONF_ASSISTANT_NAME,
                 default=config.get(CONF_ASSISTANT_NAME, DEFAULT_ASSISTANT_NAME),

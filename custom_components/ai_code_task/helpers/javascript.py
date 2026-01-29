@@ -20,21 +20,27 @@ class JSModuleRegistration:
     def __init__(self, hass: HomeAssistant) -> None:
         """Initialise."""
         self.hass = hass
-        self.lovelace = self.hass.data.get("lovelace")
 
     async def async_setup(self) -> bool:
         """Register ai_code_task path and modules."""
+        # 1. Register static path (always do this)
         await self._async_register_path()
 
-        # If lovelace is not available (e.g. during very early startup or specialized installs)
-        # we might need to skip or wait.
-        if not self.lovelace:
+        # 2. Register Lovelace resources
+        lovelace = self.hass.data.get("lovelace")
+
+        # If lovelace is not available yet, we might be in early startup.
+        # However, for most integrations, we can just skip if it's not and wait for a retry or rely on HA's loading.
+        # But a more robust way is to try and register if it exists.
+        if not lovelace:
             LOGGER.debug(
-                "Lovelace not found in hass.data, skipping resource registration"
+                "Lovelace not found in hass.data, skipping resource registration for now"
             )
             return True
 
-        if self.lovelace.mode == "storage":
+        self.lovelace = lovelace
+
+        if lovelace.mode == "storage":
             await self._async_wait_for_lovelace_resources()
         return True
 
@@ -47,14 +53,17 @@ class JSModuleRegistration:
     async def _async_register_path(self):
         """Register resource path if not already registered."""
         try:
-            # We map /ai_code_fast/js to the frontend directory
-            path = Path(self.hass.config.path(f"custom_components/{DOMAIN}/frontend"))
+            integration = await async_get_integration(self.hass, DOMAIN)
+            path = Path(integration.file_path) / "frontend"
+
             await self.hass.http.async_register_static_paths(
                 [StaticPathConfig(JS_URL, str(path), False)]
             )
             LOGGER.debug("Registered resource path %s from %s", JS_URL, path)
         except RuntimeError:
             LOGGER.debug("Resource path %s already registered", JS_URL)
+        except Exception as err:
+            LOGGER.error("Error registering static path: %s", err)
 
     async def _async_wait_for_lovelace_resources(self) -> None:
         """Wait for lovelace resources to have loaded."""
