@@ -40,13 +40,15 @@ class JSModuleRegistration:
 
         self.lovelace = lovelace
 
-        if lovelace.mode == "storage":
+        # HA 2026.2.0 removed the mode attribute from LovelaceData.
+        # We assume storage mode if the attribute is missing.
+        if getattr(lovelace, "mode", "storage") == "storage":
             await self._async_wait_for_lovelace_resources()
         return True
 
     async def async_unload(self) -> bool:
         """Unload javascript module registration."""
-        if self.lovelace and self.lovelace.mode == "storage":
+        if self.lovelace and getattr(self.lovelace, "mode", "storage") == "storage":
             await self.async_unregister()
         return True
 
